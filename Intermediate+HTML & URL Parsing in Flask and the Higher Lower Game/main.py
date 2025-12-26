@@ -1,0 +1,18 @@
+from flask import Flask
+app = Flask(__name__)
+
+
+@app.route('/')
+def hello_world():
+    return "Hello World"
+
+@app.route('/bye')
+def bye():
+    return "bye bye !"
+
+@app.route('/username/<name>')
+def greet(name):
+    return f"hello {name}"
+
+if __name__ == "__main__":
+    app.run(debug=True)
